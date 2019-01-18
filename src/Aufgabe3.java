@@ -2,7 +2,6 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class Aufgabe3
 {
@@ -10,7 +9,7 @@ public class Aufgabe3
     {
         File file = null; //Weg dahin
         FileWriter fr = null; //liest den File ein
-        BufferedWriter br = null; //liest mir die Datei
+        BufferedWriter bw = null; //liest mir die Datei
         //wird im try block befüllt
         try
         {
@@ -23,11 +22,11 @@ public class Aufgabe3
                 file.createNewFile();
             }
             fr = new FileWriter(file);
-            br = new BufferedWriter(fr);
+            bw = new BufferedWriter(fr);
 
             for (int i = 0; i < 5; i++)
             {
-                br.write((i+1)+ System.getProperty("line.separator"));//System.getProperty("line.separator") ist ein Zeilenumbruch
+                bw.write((i+1)+ System.getProperty("line.separator"));//System.getProperty("line.separator") ist ein Zeilenumbruch
             }
 
         } catch (Exception ex)
@@ -37,7 +36,7 @@ public class Aufgabe3
         {
             try
             {
-                br.close(); // damit es den geöffneten File schließt - wegen speicher....
+                bw.close(); // damit es den geöffneten File schließt - wegen speicher....
             } catch (IOException e)
             {
                 e.printStackTrace();
